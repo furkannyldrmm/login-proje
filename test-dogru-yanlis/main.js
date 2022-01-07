@@ -1,6 +1,10 @@
 
 function check(){
-	var question0 = document.quiz.question0.value;
+	
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	
+	
 	var question1 = document.quiz.question1.value;
 	var question2 = document.quiz.question2.value;
 	var question3 = document.quiz.question3.value;
@@ -13,12 +17,11 @@ function check(){
 	var question10 = document.quiz.question10.value;
 	var question11 = document.quiz.question11.value;
 	var question12 = document.quiz.question12.value;
-	var question13 = document.quiz.question13.value;
+	var question13 = document.quiz.question12.value;
+
 	var correct = 0;
 
-	if (question0 == "dogru") {
-		correct++;
-}
+	
 	if (question1 == "dogru") {
 		correct++;
 }
@@ -51,33 +54,36 @@ function check(){
 }	if (question11 == "dogru") {
 	correct++;
 }
-if (question12 == "dogru") {
+	if (question12 == "dogru") {
 	correct++;
 }
 if (question13 == "dogru") {
 	correct++;
 }
+
+
+
 	
-	var pictures = ["img/win.jpg", "img/meh.jpg", "img/lose.jpg"];
-	var messages = ["İmkansızdı bu :(", "Sen de herkes gibisin", "Berbatsın aşko"];
+	var pictures = ["img/cevap1.JPG","img/cevap2.JPG","img/cevap3.JPG"];
+	
 	var score;
 
 	if (correct == 0 || correct < 3) {
 		score = 2;
 	}
 
-	if (correct > 3 && correct < 9) {
+	if (correct > 3 && correct < 10) {
 		score = 1;
 	}
 
-	if (correct == 9) {
+	if (correct > 10 && correct < 13) {
 		score = 0;
 	}
 
 	document.getElementById("after_submit").style.visibility = "visible";
 
-	document.getElementById("message").innerHTML = messages[score];
-	document.getElementById("number_correct").innerHTML = correct + " adet doğrun var.";
+	
+	document.getElementById("number_correct").innerHTML = correct + " Cevabın Doğru.";
 	document.getElementById("picture").src = pictures[score];
 	}
 	
